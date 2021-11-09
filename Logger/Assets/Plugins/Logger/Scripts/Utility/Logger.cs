@@ -48,19 +48,21 @@ public class Logger : ILogger
     }
 
 
-    public void ShowNormalLog(string message, Color color)
+    public void ShowNormalLog(string message, Color color,Channels channel)
     {
-        
+        if (!IsChannelActive(channel)) return;
         Debug.Log($"<color=#{ ColorUtility.ToHtmlStringRGB( color)}>{message}</color>");
     }
 
-    public void ShowWarningLog(string message, Color color)
+    public void ShowWarningLog(string message, Color color, Channels channel)
     {
+        if (!IsChannelActive(channel)) return;
         Debug.LogWarning($"<color=#{ColorUtility.ToHtmlStringRGB(color)}>{message}</color>");
     }
 
-    public void ShowErrorLog(string message, Color color)
+    public void ShowErrorLog(string message, Color color,Channels channel)
     {
+        if (!IsChannelActive(channel)) return;
         Debug.LogError($"<color=#{ColorUtility.ToHtmlStringRGB(color)}>{message}</color>");
     }
 }
