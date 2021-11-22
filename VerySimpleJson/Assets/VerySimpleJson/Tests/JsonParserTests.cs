@@ -8,18 +8,14 @@ public class JsonParserTests
 {
     // A Test behaves as an ordinary method
     [Test]
-    public void JsonParserTestsSimplePasses()
+ 
+    public void FindWordBetweenTests()
     {
-        // Use the Assert class to test conditions
-    }
+        // Assert.AreEqual("moeen", StringSubUtility.FindWordBetween(1, '/', "a/moeen/"));
+        // Assert.AreNotEqual("moeen", StringSubUtility.FindWordBetween(1, '/', "a/moeendsa/"));
+        //
+        // Assert.AreEqual("moeen", StringSubUtility.FindWordBetween(0, '/', "/moeen/ewqe"));
 
-    // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-    // `yield return null;` to skip a frame.
-    [UnityTest]
-    public IEnumerator JsonParserTestsWithEnumeratorPasses()
-    {
-        // Use the Assert class to test conditions.
-        // Use yield to skip a frame.
-        yield return null;
+        
     }
 }
