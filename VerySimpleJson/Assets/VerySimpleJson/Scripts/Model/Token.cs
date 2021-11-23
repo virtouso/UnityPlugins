@@ -12,6 +12,7 @@ public class Token
   {
     Value = value;
     Type = type;
+    Debug.Log("new token:::"+value+":::"+ type.ToString());
   }
 }
 

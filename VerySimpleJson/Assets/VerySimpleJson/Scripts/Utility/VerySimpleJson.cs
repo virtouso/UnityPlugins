@@ -7,7 +7,7 @@ public class VerySimpleJson : IVerySimpleJson
 {
     private IVerySimpleJsonReferences _references;
 
-    VerySimpleJson(IVerySimpleJsonReferences references)
+    public VerySimpleJson(IVerySimpleJsonReferences references)
     {
         _references = references;
     }
@@ -22,9 +22,11 @@ public class VerySimpleJson : IVerySimpleJson
     {
         List<Token> tokens = new List<Token>();
 
-
         for (int i = 0; i < input.Length; i++)
         {
+            char current = input[i];
+            Debug.Log( "current char::"+ current);
+
             if (input[i] == '{' || input[i] == '}')
             {
                 tokens.Add(new Token(input[i].ToString(), TokenType.CurlyBracket));

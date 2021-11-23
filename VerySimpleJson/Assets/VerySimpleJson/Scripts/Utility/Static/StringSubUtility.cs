@@ -13,7 +13,8 @@ public static class StringSubUtility
             if (input[i] != startChar) result += input[i];
             else
             {
-                lastIndex = i+1;
+                lastIndex = i ;
+                Debug.Log("Returned string IS:::" + result);
                 return result;
             }
         }
@@ -25,18 +26,20 @@ public static class StringSubUtility
     public static string FindWholeNumber(int startIndex, string input, out int lastIndex)
     {
         string result = string.Empty;
-        for (int i = 0; i < input.Length; i++)
+        for (int i = startIndex; i < input.Length; i++)
         {
             if (char.IsDigit(input[i]) || input[i] == '.')
-            {result += input[i];}
+            {
+                result += input[i];
+            }
             else
             {
-                lastIndex = i+1;
+                lastIndex = i-1 ;
+                Debug.Log("Returned number Is:::" + result);
                 return result;
             }
         }
-        throw new ArgumentException();
 
+        throw new ArgumentException();
     }
-    
 }
