@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ITreeNode
+public interface ITreeNode<T>
 {
-  ITreeNode Parent { get; set; }
+  T Data { get; set; }
+  
+  ITreeNode<T> Parent { get; set; }
     
-  List<ITreeNode> Children { get; set; }
+  List<ITreeNode<T>> Children { get; set; }
 
-  void SetParent(ITreeNode parent);
-  void AddChild(ITreeNode child);
+  void SetParent(ITreeNode<T> parent);
+  void AddChild(ITreeNode<T> child);
 
 
 }
